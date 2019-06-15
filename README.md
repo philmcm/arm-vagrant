@@ -1,13 +1,13 @@
 # Vagrant Environment for Arm development
 
-A Vagrant/VirtualBox environment including OpenOCD, ARM GCC, etc.
+A Vagrant/VirtualBox environment including OpenOCD, ARM GCC, etc. primarily focused on probes supporting CMSIS-DAP for NXP Kinetis builds.  However, this should be extendable to many other Arm Cortex-M based applications.
 
 Preliminary testing has been performed with the following debug probes:
 - Segger J-Link Plus
 - NXP Kinetis FRDM-K28F board (running CMSIS-DAP firmware)
 - LPC-Link2 using J-Link Plus firmware (currently, CMSIS-DAP is not working)
 
-I run the environment under PopOS! 18.04 LTS.  It should run on any other system supporting VirtualBox and Vagrant.
+I have tested the environment under Pop!OS 18.04 LTS, my personal Linux desktop of choice.  It should run on any other system supporting VirtualBox and Vagrant.
 
 STM and ST-Link support is in progress.
 
