@@ -25,7 +25,8 @@ Vagrant.configure("2") do |config|
       libusb-1.0 \\
       libudev-dev \\
       linux-image-extra-virtual \\
-      git
+      git \\
+      cmake
     git clone https://github.com/signal11/hidapi.git
     cd hidapi
     ./bootstrap
@@ -43,10 +44,13 @@ Vagrant.configure("2") do |config|
     sudo make install
     cd ..
 #    rm -rf openocd
-    echo 'SUBSYSTEM=="usb|hidraw", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0666"' | sudo tee -a /etc/udev/rules.d/50-OpenOCDProg.rules
-    echo 'SUBSYSTEM=="usb|hidraw", ATTRS{idVendor}=="1fc9", ATTRS{idProduct}=="0090", MODE="0666"' | sudo tee -a /etc/udev/rules.d/50-OpenOCDProg.rules
-    echo 'SUBSYSTEM=="usb|hidraw", ATTRS{idVendor}=="1366", ATTRS{idProduct}=="0101", MODE="0666"' | sudo tee -a /etc/udev/rules.d/50-OpenOCDProg.rules
+    echo 'SUBSYSTEM=="usb|hidraw", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0664", GROUP="vagrant"' | sudo tee -a /etc/udev/rules.d/50-OpenOCDProg.rules
+    echo 'SUBSYSTEM=="usb|hidraw", ATTRS{idVendor}=="1fc9", ATTRS{idProduct}=="0090", MODE="0664", GROUP="vagrant"' | sudo tee -a /etc/udev/rules.d/50-OpenOCDProg.rules
+    echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="1366", ATTRS{idProduct}=="0101", MODE="0664", GROUP="vagrant"' | sudo tee -a /etc/udev/rules.d/50-OpenOCDProg.rules
     sudo udevadm control --reload-rules
     sudo udevadm trigger
+    wget -q https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2
+    tar xjf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2
+    echo 'export ARMGCC_DIR=~/gcc-arm-none-eabi-8-2018-q4-major' | sudo tee -a .bashrc
   SHELL
 end
