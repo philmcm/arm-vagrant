@@ -1,6 +1,13 @@
 # Vagrant Environment for Arm development
 
-Provided as-is.  Use at own risk.
+Provided "as is".  Use at own risk.
+
+## Installation Prerequisites
+
+- VirtualBox on your preferred platform.
+- Vagrant.
+
+Vagrant will take care of the rest!
 
 ## Installation Instructions
 
