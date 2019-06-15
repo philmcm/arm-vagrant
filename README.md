@@ -33,6 +33,6 @@ Use `openocd`, `cmake`, and anything else you need.
 
 ## Thank You
 
-This work is based on Emilie Gillet's mutable-dev-environment (https://github.com/pichenettes/mutable-dev-environment.git).
+This work is based on Emilie Gillet's mutable-dev-environment (https://github.com/pichenettes/mutable-dev-environment.git), which was in turn based on the Adafruit ARM-toolchain-vagrant project (https://github.com/adafruit/ARM-toolchain-vagrant.git).
 
 When I had issues I consulted Emilie's work and often got the answer I needed.  Thanks Emilie!
