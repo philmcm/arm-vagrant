@@ -7,9 +7,11 @@ Preliminary testing has been performed with the following debug probes:
 - NXP Kinetis FRDM-K28F board (running CMSIS-DAP firmware)
 - LPC-Link2 using J-Link Plus firmware (currently, CMSIS-DAP is not working)
 
+I run the environment under PopOS! 18.04 LTS.  It should run on any other system supporting VirtualBox and Vagrant.
+
 STM and ST-Link support is in progress.
 
-Provided "as is".  Use at own risk.
+Provided "as is".  Use at own risk.  Please raise any issues here in GitHub and thank you for your support.
 
 ## Installation Prerequisites
 
