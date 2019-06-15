@@ -48,14 +48,13 @@ Vagrant.configure("2") do |config|
     git clone git://repo.or.cz/openocd.git
     cd openocd
     ./bootstrap
-    ./configure --enable-cmsis-dap --enable-jlink
+    ./configure --enable-cmsis-dap --enable-jlink --enable-stlink
     make
     sudo make install
     cd ..
 #    rm -rf openocd
 
-# Add rules for UDEVs, these allow the vagrant user to run OpenOCD without
-# being superuser.
+# Add rules for UDEVs, these allow the vagrant user to run OpenOCD without being superuser.
 # Note: only CMSIS-DAP requires HID, others require only USB.
 
     echo 'SUBSYSTEM=="usb|hidraw", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0664", GROUP="vagrant"' | sudo tee -a /etc/udev/rules.d/50-OpenOCDProg.rules
